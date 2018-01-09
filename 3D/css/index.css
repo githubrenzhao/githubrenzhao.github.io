@@ -1,0 +1,87 @@
+/*f父级样式*/
+body,html{
+	width: 100%;
+}
+.box{
+	width: 640px;
+	position: relative;
+	margin: 10% auto;
+}
+.inner{
+	position: relative;
+}
+.img_wrapper{
+	position: relative;
+	/*border: 10px solid #ddd;*/
+	transform-style:preserve-3d;
+	/*transform: rotateX(30deg);*/
+}
+ul{
+	transform-style:preserve-3d;
+	position: relative;
+	width: 640px;
+	height: 640px;
+	background:red;
+	transform:rotateY(360deg);
+	transform-origin:center;
+	/*perspective: 200px;*/
+	animation:ring 10s infinite linear;
+}
+
+li{
+	position: absolute;
+	display: inline-block;
+	left: 0;
+	top: 0;
+	width:640px;
+	height: 640px;
+	background: red;
+	/*align-items: center;
+    justify-content: center;*/
+	/*border: 3px solid rgba(132,200,0,0.2);*/
+}
+li img{
+	width:640px;
+	height: 640px;
+}
+.front{
+	transform-origin: center center;
+	transform:translate3d(0,0,320px);
+}
+.back{
+	transform-origin: center center;
+	transform: rotateY(180deg) translate3d(0,0,320px);
+}
+.left{
+	transform-origin: center center;
+	transform: rotateY(-90deg) translate3d(0px,0px,-320px);
+}
+.right{
+	transform-origin: center center;
+	transform: rotateY(90deg) translate3d(0,0,-320px);
+}
+.top{
+	transform-origin: center center;
+	transform: rotateX(90deg) translate3d(0,0,-320px);
+}
+.bottom{
+	transform-origin: center center;
+	transform: rotateX(-90deg) translate3d(0,0px,-320px);
+}
+
+
+
+
+@keyframes ring {
+	0%{
+		/*transform-origin: -50% -50%;*/
+		transform-origin: 640px 640px;
+		transform: rotateY(0deg) rotateX(0deg);
+	};
+	100%{
+		transform-origin: 640px 640px;
+		/*transform-origin: -50% -50%;*/
+		transform: rotateY(359.9deg) rotateX(-359.9deg);
+	};
+}
+
